@@ -10,7 +10,7 @@ public class CoinsPerSecondUI : MonoBehaviour
     
     public void DrawCoinsPerSecond(int value)
     {
-        _textMesh.text = value.ToString();
+        _textMesh.text = value.ToString() + "₽/сек";
     }
 
 }

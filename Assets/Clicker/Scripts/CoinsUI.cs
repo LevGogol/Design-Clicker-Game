@@ -31,13 +31,13 @@ public class CoinsUI : MonoBehaviour
         while (timer > 0f)
         {
             _currentValue = Mathf.FloorToInt(Mathf.Lerp(_oldValue, value, 1 - timer/delay));
-            _textMesh.text = _currentValue.ToString();
+            _textMesh.text = _currentValue.ToString() + "₽";
 
             yield return null;
             timer -= Time.deltaTime;
         }
         
-        _textMesh.text = value.ToString();
+        _textMesh.text = value.ToString() + "₽";
         _oldValue = value;
         _coroutine = null;
     }

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Game : MonoBehaviour
 {
@@ -9,7 +7,6 @@ public class Game : MonoBehaviour
     [SerializeField] private int _coinsPerSecond;
     [SerializeField] private InputFacade _input;
     [SerializeField] private Screens _screens;
-    [FormerlySerializedAs("_shoop")] [SerializeField] private Shop shop;
 
     private Wallet _wallet;
     private CoinsPerSecondInfo _coinsPerSecondInfo;
@@ -26,12 +23,12 @@ public class Game : MonoBehaviour
 
     private void Start()
     {
-        shop.ItemBuyed += ShopOnItemBuyed;
+        _screens.Shop.ItemBuyed += ShopOnItemBuyed;
     }
 
-    private void ShopOnItemBuyed(Item item)
+    private void ShopOnItemBuyed(ItemUI itemUI)
     {
-        print(item.name);
+        print(itemUI.name);
     }
 
     private IEnumerator UpdateCoinsPerSecond()

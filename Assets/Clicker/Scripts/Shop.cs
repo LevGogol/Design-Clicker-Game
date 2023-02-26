@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
-    [SerializeField] private Item[] _items;
+    [SerializeField] private ItemUI[] _items;
     
-    public event Action<Item> ItemBuyed;
+    public event Action<ItemUI> ItemBuyed;
 
     private void Start()
     {
@@ -17,6 +17,6 @@ public class Shop : MonoBehaviour
 
     private void OnValidate()
     {
-        _items = GetComponentsInChildren<Item>();
+        _items = GetComponentsInChildren<ItemUI>();
     }
 }
