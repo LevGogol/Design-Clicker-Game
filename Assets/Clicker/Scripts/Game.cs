@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 
 public class Game : MonoBehaviour
@@ -7,9 +9,12 @@ public class Game : MonoBehaviour
     [SerializeField] private int _coinsPerSecond;
     [SerializeField] private InputFacade _input;
     [SerializeField] private Screens _screens;
+    [SerializeField] private CameraFacade _camera;
+    [SerializeField] private Enviroment _enviroment;
 
     private Wallet _wallet;
     private CoinsPerSecondInfo _coinsPerSecondInfo;
+    private int _buyedIndex;
 
     private void Awake()
     {
@@ -17,18 +22,19 @@ public class Game : MonoBehaviour
         _coinsPerSecondInfo = new CoinsPerSecondInfo();
         _screens.CoinsUI.DrawCoins(_wallet.CoinCount);
         _screens.CoinsPerSecondUI.DrawCoinsPerSecond(_coinsPerSecondInfo.Get());
+        _screens.Shop.AddItem(_enviroment.GetItem(0));
 
         StartCoroutine(UpdateCoinsPerSecond());
     }
 
-    private void Start()
-    {
-        _screens.Shop.ItemBuyed += ShopOnItemBuyed;
-    }
-
     private void ShopOnItemBuyed(ItemUI itemUI)
     {
-        print(itemUI.name);
+        _enviroment.GetItem(_buyedIndex).Show();
+        _buyedIndex++;
+        DOVirtual.DelayedCall(1f, () =>
+        {
+            _screens.Shop.AddItem(_enviroment.GetItem(_buyedIndex));
+        });
     }
 
     private IEnumerator UpdateCoinsPerSecond()
@@ -43,7 +49,23 @@ public class Game : MonoBehaviour
 
     private void OnEnable()
     {
-        _input.Downed += OnInputDowned;
+        _input.DownTouched += OnInputDowned;
+        _input.MouseDeltaChanged += OnMouseDeltaChanged;
+        _screens.Shop.ItemBuyed += ShopOnItemBuyed;
+    }
+
+    private void OnMouseDeltaChanged(Vector2 direction)
+    {
+        var processDirection = new Vector3(-direction.x, 0, -direction.y);
+        processDirection = Quaternion.Euler(0, _camera.transform.eulerAngles.y, 0) * processDirection;
+        _camera.TryMove(processDirection);
+    }
+
+    private void OnDisable()
+    {
+        _input.DownTouched -= OnInputDowned;
+        _input.MouseDeltaChanged -= OnMouseDeltaChanged;
+        _screens.Shop.ItemBuyed -= ShopOnItemBuyed;
     }
 
     private void OnInputDowned()

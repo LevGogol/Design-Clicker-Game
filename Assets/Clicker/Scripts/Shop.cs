@@ -1,22 +1,23 @@
 ﻿using System;
+using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
-    [SerializeField] private ItemUI[] _items;
+    [SerializeField] private ItemUI _itemUIPrefab;
+    [SerializeField] private RectTransform _contentRoot;
+    
+    private List<ItemUI> _items = new List<ItemUI>();
     
     public event Action<ItemUI> ItemBuyed;
 
-    private void Start()
+    public void AddItem(Item item)
     {
-        foreach (var item in _items)
-        {
-            item.Buyed += () => ItemBuyed?.Invoke(item);
-        }
-    }
+        var itemUI = Instantiate(_itemUIPrefab, _contentRoot);
+        itemUI.Initialize(item);
+        itemUI.Buyed += () => ItemBuyed?.Invoke(itemUI);
 
-    private void OnValidate()
-    {
-        _items = GetComponentsInChildren<ItemUI>();
+        itemUI.RectTransform.DOScale(1f, 1f).From(0);
     }
 }

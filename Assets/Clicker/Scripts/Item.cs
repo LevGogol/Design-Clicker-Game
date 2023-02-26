@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 
 public class Item : MonoBehaviour
 {
@@ -7,4 +8,17 @@ public class Item : MonoBehaviour
     [SerializeField] private string _description;
     [SerializeField] private int _coinsPerSecond;
     [SerializeField] private int _cost;
+    
+    public Sprite Sprite => _sprite;
+    public string Name => _name;
+    public string Description => _description;
+    public int CoinsPerSecond => _coinsPerSecond;
+    public int Cost => _cost;
+
+    public void Show()
+    {
+        gameObject.SetActive(true);
+
+        transform.DOScale(1f, 1f).SetEase(Ease.OutBounce).From(0f);
+    }
 }
