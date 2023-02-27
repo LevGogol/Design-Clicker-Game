@@ -2,15 +2,21 @@
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Game : MonoBehaviour
 {
+    [SerializeField] private int _coins;
     [SerializeField] private int _coinsPerClick;
     [SerializeField] private int _coinsPerSecond;
     [SerializeField] private InputFacade _input;
     [SerializeField] private Screens _screens;
     [SerializeField] private CameraFacade _camera;
     [SerializeField] private Enviroment _enviroment;
+
+    [SerializeField] private float _minRandomOffset;
+    [SerializeField] private float _maxRandomOffset;
+    [SerializeField] private float _upOffset;
 
     private Wallet _wallet;
     private CoinsPerSecondInfo _coinsPerSecondInfo;
@@ -19,6 +25,7 @@ public class Game : MonoBehaviour
     private void Awake()
     {
         _wallet = new Wallet();
+        _wallet.CoinCount = _coins;
         _coinsPerSecondInfo = new CoinsPerSecondInfo();
         _screens.CoinsUI.DrawCoins(_wallet.CoinCount);
         _screens.CoinsPerSecondUI.DrawCoinsPerSecond(_coinsPerSecondInfo.Get());
@@ -27,14 +34,25 @@ public class Game : MonoBehaviour
         StartCoroutine(UpdateCoinsPerSecond());
     }
 
+    private void OnEnable()
+    {
+        _input.DownTouched += OnInputDowned;
+        _input.MouseDeltaChanged += OnMouseDeltaChanged;
+        _screens.Shop.ItemBuyed += ShopOnItemBuyed;
+    }
+
     private void ShopOnItemBuyed(ItemUI itemUI)
     {
-        _enviroment.GetItem(_buyedIndex).Show();
+        itemUI.Deactivate();
+
+        var sequence = DOTween.Sequence();
+        sequence.AppendCallback(() => _camera.MoveTo(itemUI.ItemOnScene.transform.position));
+        sequence.AppendInterval(0.5f);
+        sequence.AppendCallback(() => itemUI.ItemOnScene.Show());
+        sequence.AppendInterval(1f);
+        sequence.AppendCallback(() => _screens.Shop.AddItemWithAnimation(_enviroment.GetItem(_buyedIndex)));
+            
         _buyedIndex++;
-        DOVirtual.DelayedCall(1f, () =>
-        {
-            _screens.Shop.AddItem(_enviroment.GetItem(_buyedIndex));
-        });
     }
 
     private IEnumerator UpdateCoinsPerSecond()
@@ -45,13 +63,6 @@ public class Game : MonoBehaviour
             _screens.CoinsPerSecondUI.DrawCoinsPerSecond(_coinsPerSecondInfo.Get());
             yield return new WaitForSeconds(1f);
         }
-    }
-
-    private void OnEnable()
-    {
-        _input.DownTouched += OnInputDowned;
-        _input.MouseDeltaChanged += OnMouseDeltaChanged;
-        _screens.Shop.ItemBuyed += ShopOnItemBuyed;
     }
 
     private void OnMouseDeltaChanged(Vector2 direction)
@@ -71,7 +82,8 @@ public class Game : MonoBehaviour
     private void OnInputDowned()
     {
         AddCoins(_coinsPerClick);
-        _screens.CoinsPerClickUI.DrawCoinsPerClick(_coinsPerClick, Input.mousePosition / _screens.Canvas.scaleFactor);
+        var randomOffset = new Vector3(Random.Range(_minRandomOffset, _maxRandomOffset), Random.Range(0, _maxRandomOffset) + _upOffset);
+        _screens.CoinsPerClickUI.DrawCoinsPerClick(_coinsPerClick, Input.mousePosition / _screens.Canvas.scaleFactor + randomOffset);
     }
 
     private void AddCoins(int coins)

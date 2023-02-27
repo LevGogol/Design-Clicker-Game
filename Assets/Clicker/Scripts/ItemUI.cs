@@ -12,12 +12,15 @@ public class ItemUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _description;
     [SerializeField] private TextMeshProUGUI _coinsPerSecond;
     [SerializeField] private TextMeshProUGUI _cost;
+    [SerializeField] private Image _buttonImage;
+    [SerializeField] private Color _buttonDeactivate;
 
-    private Item _gameObjectOnScene;
+    private Item _itemOnScene;
 
     public event Action Buyed;
 
     public RectTransform RectTransform => _rectTransform;
+    public Item ItemOnScene => _itemOnScene;
 
     private void Awake()
     {
@@ -31,7 +34,14 @@ public class ItemUI : MonoBehaviour
         _description.text = item.Description;
         _cost.text = item.Cost + "₽";
         _coinsPerSecond.text = item.CoinsPerSecond + "₽/сек";
-        _gameObjectOnScene = item;
+        _itemOnScene = item;
+    }
+
+    public void Deactivate()
+    {
+        _button.interactable = false;
+        _buttonImage.color = _buttonDeactivate;
+        _cost.text = "куплено";
     }
 
     private void OnClick()
