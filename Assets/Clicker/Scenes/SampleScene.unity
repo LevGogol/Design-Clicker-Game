@@ -486,11 +486,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205411178}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
+  m_IsTrigger: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 12.36, y: 1, z: 13.63}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 15.862649, y: 1, z: 16.392887}
+  m_Center: {x: 0.84700257, y: 3.730237e-15, z: -1.8048117}
 --- !u!1001 &213327375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1116,7 +1116,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 821093181}
   m_HandleRect: {fileID: 821093180}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1910,6 +1910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _boxCollider: {fileID: 205411180}
   _objectAtCenter: {fileID: 692994803}
+  _power: 0.015
 --- !u!1001 &672816560
 PrefabInstance:
   m_ObjectHideFlags: 0

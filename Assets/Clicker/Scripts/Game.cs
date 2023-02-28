@@ -27,7 +27,7 @@ public class Game : MonoBehaviour
         _wallet = new Wallet();
         _wallet.CoinCount = _coins;
         _coinsPerSecondInfo = new CoinsPerSecondInfo();
-        _screens.CoinsUI.DrawCoins(_wallet.CoinCount);
+        _screens.CoinsUI.ForceDrawCoins(_wallet.CoinCount);
         _screens.CoinsPerSecondUI.DrawCoinsPerSecond(_coinsPerSecondInfo.Get());
         _screens.Shop.AddItem(_enviroment.GetItem(0));
 
@@ -36,13 +36,19 @@ public class Game : MonoBehaviour
 
     private void OnEnable()
     {
-        _input.DownTouched += OnInputDowned;
+        // _input.DownTouched += OnInputDowned;
         _input.MouseDeltaChanged += OnMouseDeltaChanged;
-        _screens.Shop.ItemBuyed += ShopOnItemBuyed;
+        _screens.Shop.ItemClicked += ShopOnItemClicked;
     }
 
-    private void ShopOnItemBuyed(ItemUI itemUI)
+    private void ShopOnItemClicked(ItemUI itemUI)
     {
+        if(itemUI.ItemOnScene.Cost > _wallet.CoinCount)
+            return;
+
+        _wallet.CoinCount -= itemUI.ItemOnScene.Cost;
+        _screens.CoinsUI.DrawCoins(_wallet.CoinCount);
+
         itemUI.Deactivate();
 
         var sequence = DOTween.Sequence();
@@ -59,31 +65,38 @@ public class Game : MonoBehaviour
     {
         while (true)
         {
+            yield return new WaitForSeconds(1f);
             AddCoins(_coinsPerSecond);
             _screens.CoinsPerSecondUI.DrawCoinsPerSecond(_coinsPerSecondInfo.Get());
-            yield return new WaitForSeconds(1f);
         }
     }
 
     private void OnMouseDeltaChanged(Vector2 direction)
     {
         var processDirection = new Vector3(-direction.x, 0, -direction.y);
-        processDirection = Quaternion.Euler(0, _camera.transform.eulerAngles.y, 0) * processDirection;
-        _camera.TryMove(processDirection);
+        // processDirection = Quaternion.Euler(0, _camera.transform.eulerAngles.y, 0) * processDirection;
+        _camera.Move(processDirection);
     }
 
     private void OnDisable()
     {
         _input.DownTouched -= OnInputDowned;
         _input.MouseDeltaChanged -= OnMouseDeltaChanged;
-        _screens.Shop.ItemBuyed -= ShopOnItemBuyed;
+        _screens.Shop.ItemClicked -= ShopOnItemClicked;
     }
 
     private void OnInputDowned()
     {
         AddCoins(_coinsPerClick);
-        var randomOffset = new Vector3(Random.Range(_minRandomOffset, _maxRandomOffset), Random.Range(0, _maxRandomOffset) + _upOffset);
-        _screens.CoinsPerClickUI.DrawCoinsPerClick(_coinsPerClick, Input.mousePosition / _screens.Canvas.scaleFactor + randomOffset);
+        DrawCoinPerClick();
+    }
+
+    private void DrawCoinPerClick()
+    {
+        var randomOffset = new Vector3(Random.Range(_minRandomOffset, _maxRandomOffset),
+            Random.Range(0, _maxRandomOffset) + _upOffset);
+        _screens.CoinsPerClickUI.DrawCoinsPerClick(_coinsPerClick,
+            Input.mousePosition / _screens.Canvas.scaleFactor + randomOffset);
     }
 
     private void AddCoins(int coins)

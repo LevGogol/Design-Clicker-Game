@@ -6,36 +6,46 @@ public class CameraFacade : MonoBehaviour
 {
     [SerializeField] private BoxCollider _boxCollider;
     [SerializeField] private Transform _objectAtCenter;
-
+    [SerializeField] private float _power;
+    
     private Vector3 _offsetFromCenterObject;
+    private Vector3 _startPosition;
 
     private void Awake()
     {
         _offsetFromCenterObject = transform.position - _objectAtCenter.position;
+        _startPosition = transform.localPosition;
     }
 
-    public bool TryMove(Vector3 direction)
+    private void LateUpdate()
     {
-        var oldPosition = transform.position;
-        
-        var nextPositionX = transform.position + Vector3.right * direction.x;
-        if(BoxContainsPoint(_boxCollider.transform, _boxCollider.center, _boxCollider.size, nextPositionX))
-            transform.position = nextPositionX;
-        
-        var nextPositionY = transform.position + Vector3.forward * direction.z;
-        if(BoxContainsPoint(_boxCollider.transform, _boxCollider.center, _boxCollider.size, nextPositionY))
-            transform.position = nextPositionY;
+        if (!BoxContainsPoint(_boxCollider, transform.localPosition))
+        {
+            transform.localPosition = Vector3.Lerp(transform.localPosition, _startPosition, _power);
+        }
+    }
 
-        return oldPosition == transform.position;
+    public void Move(Vector3 direction)
+    {
+        if (direction == Vector3.zero) 
+            return;
+
+        direction = Quaternion.Euler(0, transform.localRotation.eulerAngles.y, 0) * direction;
+        transform.localPosition += direction;
     }
 
     public void MoveTo(Vector3 target)
     {
+        target.y = _objectAtCenter.position.y;
         transform.DOMove(target + _offsetFromCenterObject, 0.5f).SetEase(Ease.OutSine);
     }
 
-    private bool BoxContainsPoint(Transform colliderTransform, Vector3 offset, Vector3 colliderSize, Vector3 point)
+    private bool BoxContainsPoint(BoxCollider boxCollider, Vector3 point)
     {
+        var colliderTransform = boxCollider.transform;
+        var offset = boxCollider.center;
+        var colliderSize = boxCollider.size;
+        
         Vector3 localPos = colliderTransform.InverseTransformPoint(point);
  
         localPos -= offset;

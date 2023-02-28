@@ -11,16 +11,14 @@ public class Shop : MonoBehaviour
     [SerializeField] private ScrollRect _scrollRect;
     [SerializeField] private VerticalLayoutGroup _verticalLayoutGroup;
     
-    private List<ItemUI> _items = new List<ItemUI>();
-    
-    public event Action<ItemUI> ItemBuyed;
+    public event Action<ItemUI> ItemClicked;
 
     public ItemUI AddItem(Item item)
     {
         var itemUI = Instantiate(_itemUIPrefab, _contentRoot);
         itemUI.transform.SetSiblingIndex(0);
         itemUI.Initialize(item);
-        itemUI.Buyed += () => ItemBuyed?.Invoke(itemUI);
+        itemUI.Clicked += () => ItemClicked?.Invoke(itemUI);
 
         return itemUI;
     }
@@ -29,20 +27,24 @@ public class Shop : MonoBehaviour
     {
         _scrollRect.enabled = false;
         
-        _contentRoot.DOAnchorPosY(-250, 1f).OnComplete(() =>
+        _contentRoot.DOAnchorPosY(-250, 1f);
+
+        DOVirtual.DelayedCall(0.2f, () =>
         {
             _verticalLayoutGroup.enabled = false;
-            
+
             var itemUI = AddItem(item);
+
             itemUI.RectTransform.anchoredPosition = Vector3.up * 125;
             itemUI.RectTransform.localScale = Vector3.zero;
 
             itemUI.RectTransform.DOScale(1f, 1f).OnComplete(() =>
             {
-                _scrollRect.enabled = true;
                 _verticalLayoutGroup.enabled = true;
+                _scrollRect.enabled = true;
+                _contentRoot.anchoredPosition = Vector3.zero;
             });
         });
-        
+
     }
 }

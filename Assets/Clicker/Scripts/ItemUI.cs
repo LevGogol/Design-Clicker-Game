@@ -17,7 +17,7 @@ public class ItemUI : MonoBehaviour
 
     private Item _itemOnScene;
 
-    public event Action Buyed;
+    public event Action Clicked;
 
     public RectTransform RectTransform => _rectTransform;
     public Item ItemOnScene => _itemOnScene;
@@ -46,6 +46,6 @@ public class ItemUI : MonoBehaviour
 
     private void OnClick()
     {
-        Buyed?.Invoke();
+        Clicked?.Invoke();
     }
 }

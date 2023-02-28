@@ -11,6 +11,13 @@ public class CoinsUI : MonoBehaviour
     private int _currentValue;
     private Coroutine _coroutine;
 
+    public void ForceDrawCoins(int value)
+    {
+        _textMesh.text = value + "₽";
+        _oldValue = value;
+        _currentValue = value;
+    }
+
     public void DrawCoins(int value)
     {
         if (_coroutine != null)
@@ -22,7 +29,7 @@ public class CoinsUI : MonoBehaviour
         
         _coroutine = StartCoroutine(SoftChangeTo(value));
     }
-    
+
     private IEnumerator SoftChangeTo(int value)
     {
         var delay = 0.1f;
@@ -31,15 +38,14 @@ public class CoinsUI : MonoBehaviour
         while (timer > 0f)
         {
             _currentValue = Mathf.FloorToInt(Mathf.Lerp(_oldValue, value, 1 - timer/delay));
-            _textMesh.text = _currentValue.ToString() + "₽";
+            _textMesh.text = _currentValue + "₽";
 
             yield return null;
             timer -= Time.deltaTime;
         }
         
-        _textMesh.text = value.ToString() + "₽";
+        _textMesh.text = value + "₽";
         _oldValue = value;
         _coroutine = null;
     }
-
 }
