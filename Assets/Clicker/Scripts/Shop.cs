@@ -10,23 +10,126 @@ public class Shop : MonoBehaviour
     [SerializeField] private RectTransform _contentRoot;
     [SerializeField] private ScrollRect _scrollRect;
     [SerializeField] private VerticalLayoutGroup _verticalLayoutGroup;
-    
-    public event Action<ItemUI> ItemClicked;
+    [SerializeField] private HideButton _hideButton;
+    [SerializeField] private RectTransform _rectTransform;
+    [SerializeField] private float _endValue;
+    [SerializeField] private float _duration;
+
+    private bool _isHide;
+    private float _startValue;
+    private List<ItemUI> _itemsUi = new List<ItemUI>();
+    private Vector2 _startSize;
+    private Canvas _canvas;
+    private bool _isDrag;
+    private Vector3 _lastPosition;
+
+    public event Action<int> ItemClicked;
+
+    private void Awake()
+    {
+        _canvas = GetComponentInParent<Canvas>();
+        _startSize = _rectTransform.sizeDelta;
+    }
+
+    private void OnEnable()
+    {
+        _hideButton.PointerDowned += OnPointerDowned;
+        _hideButton.PointerUpped += OnPointerUpped;
+    }
+
+    private void OnDisable()
+    {
+        _hideButton.PointerDowned -= OnPointerDowned;
+        _hideButton.PointerUpped -= OnPointerUpped;
+    }
+
+    private void Start()
+    {
+        _startValue = _rectTransform.anchoredPosition.y;
+        _startSize = _rectTransform.sizeDelta;
+    }
+
+    private void Update()
+    {
+        if(_isDrag == false)
+            return;
+
+        Vector2 delta = Vector2.zero;
+        if (UnityEngine.Input.GetMouseButtonDown(0))
+        {
+            _lastPosition = Input.mousePosition;
+        }
+        if (UnityEngine.Input.GetMouseButton(0))
+        {
+            delta = (Input.mousePosition - _lastPosition);
+            _lastPosition = Input.mousePosition;
+        }
+
+        if (UnityEngine.Input.GetMouseButtonUp(0))
+        {
+            delta = Vector2.zero;
+        }
+        
+        var rectTransformAnchoredPosition = _rectTransform.anchoredPosition;
+        rectTransformAnchoredPosition.y += delta.y / _canvas.scaleFactor;
+        _rectTransform.anchoredPosition = rectTransformAnchoredPosition;
+        
+        var sizeDelta = _rectTransform.sizeDelta;
+        sizeDelta.y = _rectTransform.anchoredPosition.y;
+        _rectTransform.sizeDelta = sizeDelta;
+    }
+
+    private void OnPointerDowned()
+    {
+        _isDrag = true;
+    }
+
+    private void OnPointerUpped()
+    {
+        OnHideButtonClicked();
+        _isDrag = false;
+    }
+
+    private void OnHideButtonClicked()
+    {
+        if(_isHide)
+            Show();
+        else
+            Hide();
+
+        _isHide = !_isHide;
+    }
+
+    private void Show()
+    {
+        _rectTransform.sizeDelta = _startSize;
+        _rectTransform.DOAnchorPosY(_startValue, _duration);
+    }
+
+    private void Hide()
+    {
+        _rectTransform.DOAnchorPosY(_endValue, _duration);
+    }
 
     public ItemUI AddItem(Item item)
     {
+        var size = _contentRoot.sizeDelta;
+        size.y += 250;
+        _contentRoot.sizeDelta = size;
+        
         var itemUI = Instantiate(_itemUIPrefab, _contentRoot);
         itemUI.transform.SetSiblingIndex(0);
         itemUI.Initialize(item);
-        itemUI.Clicked += () => ItemClicked?.Invoke(itemUI);
+        itemUI.Clicked += () => ItemClicked?.Invoke(item.Index);
+        
+        _itemsUi.Add(itemUI);
 
         return itemUI;
     }
-    
+
     public void AddItemWithAnimation(Item item)
     {
         _scrollRect.enabled = false;
-        
         _contentRoot.DOAnchorPosY(-250, 1f);
 
         DOVirtual.DelayedCall(0.2f, () =>
@@ -43,8 +146,14 @@ public class Shop : MonoBehaviour
                 _verticalLayoutGroup.enabled = true;
                 _scrollRect.enabled = true;
                 _contentRoot.anchoredPosition = Vector3.zero;
+                // _rectTransform.sizeDelta = _startSize;
             });
         });
 
+    }
+
+    public void BuyItem(int index)
+    {
+        _itemsUi[index].Deactivate();
     }
 }

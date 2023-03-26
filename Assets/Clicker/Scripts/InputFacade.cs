@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InputFacade : MonoBehaviour
 {
-    [SerializeField] private float Sensitive = 1f;
+    [SerializeField] private Vector2 Sensitive;
 
     private Vector3 _startPoint;
     private Vector3 _lastPosition;
@@ -15,6 +15,7 @@ public class InputFacade : MonoBehaviour
     public event Action UpTouched;
     public event Action<Vector2> MouseDeltaChanged;
     public event Action<Vector2> MouseOffsetChanged;
+    public event Action<float> ScrollDeltaChanged;
 
     public bool IsTouch => UnityEngine.Input.GetMouseButton(0);
     public Vector2 MouseOffset() => _offset * Sensitive;
@@ -35,7 +36,12 @@ public class InputFacade : MonoBehaviour
         if (UnityEngine.Input.GetMouseButton(0))
         {
             _offset = mousePositionScreen - _startPoint;
+            _offset.x /= Screen.width;
+            _offset.y /= Screen.height;
+
             _delta = (mousePositionScreen - _lastPosition);
+            _delta.x /= Screen.width;
+            _delta.y /= Screen.height;
 
             _lastPosition = mousePositionScreen;
         }
@@ -50,5 +56,8 @@ public class InputFacade : MonoBehaviour
 
         MouseDeltaChanged?.Invoke(MouseDelta());
         MouseOffsetChanged?.Invoke(MouseOffset());
+        
+        ScrollDeltaChanged?.Invoke(Mathf.Clamp(Input.mouseScrollDelta.y, -0.5f, 0.5f));
+        
     }
 }

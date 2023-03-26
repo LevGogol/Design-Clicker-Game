@@ -1,22 +1,17 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
+using Azur.PlayableTemplate.Sound;
 using DG.Tweening;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class Game : MonoBehaviour
 {
-    [SerializeField] private int _coins;
-    [SerializeField] private int _coinsPerClick;
     [SerializeField] private int _coinsPerSecond;
     [SerializeField] private InputFacade _input;
     [SerializeField] private Screens _screens;
     [SerializeField] private CameraFacade _camera;
     [SerializeField] private Enviroment _enviroment;
-
-    [SerializeField] private float _minRandomOffset;
-    [SerializeField] private float _maxRandomOffset;
-    [SerializeField] private float _upOffset;
+    [SerializeField] private Audio _audio;
+    [SerializeField] private PlusSystem _plusSystem;
 
     private Wallet _wallet;
     private CoinsPerSecondInfo _coinsPerSecondInfo;
@@ -25,38 +20,48 @@ public class Game : MonoBehaviour
     private void Awake()
     {
         _wallet = new Wallet();
-        _wallet.CoinCount = _coins;
         _coinsPerSecondInfo = new CoinsPerSecondInfo();
         _screens.CoinsUI.ForceDrawCoins(_wallet.CoinCount);
         _screens.CoinsPerSecondUI.DrawCoinsPerSecond(_coinsPerSecondInfo.Get());
-        _screens.Shop.AddItem(_enviroment.GetItem(0));
+        _screens.Popap.Show();
 
         StartCoroutine(UpdateCoinsPerSecond());
     }
 
     private void OnEnable()
     {
-        // _input.DownTouched += OnInputDowned;
         _input.MouseDeltaChanged += OnMouseDeltaChanged;
-        _screens.Shop.ItemClicked += ShopOnItemClicked;
+        _input.ScrollDeltaChanged += OnScrollDeltaChanged;
+        _screens.Shop.ItemClicked += BuyItem;
+        _plusSystem.ItemClicked += BuyItem;
+        _screens.Popap.Applyed += OnApplyed;
     }
 
-    private void ShopOnItemClicked(ItemUI itemUI)
+    private void BuyItem(int index)
     {
-        if(itemUI.ItemOnScene.Cost > _wallet.CoinCount)
+        var item = _enviroment.GetItem(index);
+        if(item.Cost > _wallet.CoinCount)
             return;
-
-        _wallet.CoinCount -= itemUI.ItemOnScene.Cost;
+        
+        _audio.PlaySoundOneShot(TrackName.Click);
+        
+        _wallet.CoinCount -= item.Cost;
         _screens.CoinsUI.DrawCoins(_wallet.CoinCount);
+        _coinsPerSecond += item.CoinsPerSecond;
 
-        itemUI.Deactivate();
-
+        _screens.Shop.BuyItem(index);
+        _plusSystem.Hide(index);
+        
         var sequence = DOTween.Sequence();
-        sequence.AppendCallback(() => _camera.MoveTo(itemUI.ItemOnScene.transform.position));
+        sequence.AppendCallback(() => _camera.MoveTo(item.transform.position));
         sequence.AppendInterval(0.5f);
-        sequence.AppendCallback(() => itemUI.ItemOnScene.Show());
+        sequence.AppendCallback(() =>
+        {
+            item.Show();
+            _audio.PlaySoundOneShot(TrackName.Pop);
+        });
         sequence.AppendInterval(1f);
-        sequence.AppendCallback(() => _screens.Shop.AddItemWithAnimation(_enviroment.GetItem(_buyedIndex)));
+        sequence.AppendCallback(() => AddAvailableItemWithAnimation(_buyedIndex));
             
         _buyedIndex++;
     }
@@ -67,42 +72,63 @@ public class Game : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             AddCoins(_coinsPerSecond);
+            _coinsPerSecondInfo.Registrate(_coinsPerSecond);
             _screens.CoinsPerSecondUI.DrawCoinsPerSecond(_coinsPerSecondInfo.Get());
         }
-    }
-
-    private void OnMouseDeltaChanged(Vector2 direction)
-    {
-        var processDirection = new Vector3(-direction.x, 0, -direction.y);
-        // processDirection = Quaternion.Euler(0, _camera.transform.eulerAngles.y, 0) * processDirection;
-        _camera.Move(processDirection);
-    }
-
-    private void OnDisable()
-    {
-        _input.DownTouched -= OnInputDowned;
-        _input.MouseDeltaChanged -= OnMouseDeltaChanged;
-        _screens.Shop.ItemClicked -= ShopOnItemClicked;
-    }
-
-    private void OnInputDowned()
-    {
-        AddCoins(_coinsPerClick);
-        DrawCoinPerClick();
-    }
-
-    private void DrawCoinPerClick()
-    {
-        var randomOffset = new Vector3(Random.Range(_minRandomOffset, _maxRandomOffset),
-            Random.Range(0, _maxRandomOffset) + _upOffset);
-        _screens.CoinsPerClickUI.DrawCoinsPerClick(_coinsPerClick,
-            Input.mousePosition / _screens.Canvas.scaleFactor + randomOffset);
     }
 
     private void AddCoins(int coins)
     {
         _wallet.CoinCount += coins;
-        _coinsPerSecondInfo.Registrate(coins);
         _screens.CoinsUI.DrawCoins(_wallet.CoinCount);
+    }
+
+    private void OnMouseDeltaChanged(Vector2 direction)
+    {
+        _camera.Move(direction);
+    }
+
+    private void OnScrollDeltaChanged(float delta)
+    {
+        _camera.Zoom(delta);
+    }
+
+    private void OnApplyed()
+    {
+        AddCoins(200000);
+        AddAvailableItemWithoutAnimation(0);
+        _buyedIndex++;
+        AddAvailableItemWithoutAnimation(1);
+    }
+
+    private void AddAvailableItemWithoutAnimation(int index)
+    {
+        var item = _enviroment.GetItem(index);
+        _screens.Shop.AddItem(item);
+        _plusSystem.AddItem(item);
+    }
+
+    private void AddAvailableItemWithAnimation(int index)
+    {
+        var item = _enviroment.GetItem(index);
+        _screens.Shop.AddItemWithAnimation(item);
+        _plusSystem.AddItemWithAnimation(item);
+    }
+
+    private void OnDisable()
+    {
+        _input.MouseDeltaChanged -= OnMouseDeltaChanged;
+        _input.ScrollDeltaChanged -= OnScrollDeltaChanged;
+        _screens.Shop.ItemClicked -= BuyItem;
+        _plusSystem.ItemClicked -= BuyItem;
+        _screens.Popap.Applyed -= OnApplyed;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            AddCoins(50000);
+        }
     }
 }

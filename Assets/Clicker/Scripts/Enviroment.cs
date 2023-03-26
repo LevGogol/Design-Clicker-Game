@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Enviroment : MonoBehaviour
@@ -7,8 +6,10 @@ public class Enviroment : MonoBehaviour
 
     private void Awake()
     {
-        foreach (var item in _items)
+        for (var index = 0; index < _items.Length; index++)
         {
+            var item = _items[index];
+            item.Index = index;
             item.gameObject.SetActive(false);
         }
     }
