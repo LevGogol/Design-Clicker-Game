@@ -5,46 +5,28 @@ using UnityEngine;
 
 public class ItemSystem : MonoBehaviour
 {
-    [SerializeField] private PlusSystem _plusSystem;
-    [SerializeField] private Screens _screens;
+    [SerializeField] private Pluses pluses;
     [SerializeField] private Enviroment _enviroment;
     [SerializeField] private CameraFacade _camera;
 
     public event Action<Item> ItemBuyed = delegate(Item item) {  };
+    public event Action LastBuyed = delegate() {  };
     
-    private Wallet _wallet;
     private int currentGroup;
-
-    private Shop _shop => _screens.Shop;
 
     private void OnEnable()
     {
-        _plusSystem.ItemClicked += BuyItem;
-        _shop.ItemClicked += BuyItem;
+        pluses.PlusClicked += BuyItem;
     }
 
     private void OnDisable()
     {
-        _plusSystem.ItemClicked -= BuyItem;
-        _shop.ItemClicked -= BuyItem;
+        pluses.PlusClicked -= BuyItem;
     }
 
-    public void Initialize(Wallet wallet)
+    private void BuyItem(Item item)
     {
-        _wallet = wallet;
-    }
-    
-    private void BuyItem(int index)
-    {
-        var item = _enviroment.GetItem(index);
-        if(item.Cost > _wallet.CoinCount)
-            return;
-
-        _wallet.CoinCount -= item.Cost;
-        _screens.CoinsUI.DrawCoins(_wallet.CoinCount);
-
-        _screens.Shop.BuyItem(index);
-        _plusSystem.Hide(index);
+        pluses.Hide(item.Index);
         item.Buyed = true;
 
         Audio.Instance.PlaySoundOneShot(TrackName.Click);
@@ -67,7 +49,7 @@ public class ItemSystem : MonoBehaviour
         sequence.AppendCallback(TryAddGroup);
     }
 
-    private void TryAddGroup()
+    public void TryAddGroup()
     {
         var group = _enviroment.GetGroup(currentGroup);
         foreach (var item in group.Items)
@@ -77,7 +59,14 @@ public class ItemSystem : MonoBehaviour
         }
         
         currentGroup++;
-        AddGroup(currentGroup);
+        
+        if (currentGroup >= _enviroment.GroupCount)
+        {
+            LastBuyed.Invoke();
+            return;
+        }
+        
+        DOVirtual.DelayedCall(1.5f, () => AddGroup(currentGroup));
     }
 
     public void AddGroup(int index)
@@ -92,7 +81,6 @@ public class ItemSystem : MonoBehaviour
     private void AddAvailableItem(int index)
     {
         var item = _enviroment.GetItem(index);
-        _screens.Shop.AddItemWithAnimation(item);
-        _plusSystem.AddItemWithAnimation(item);
+        pluses.AddPlusWithAnimation(item);
     }
 }

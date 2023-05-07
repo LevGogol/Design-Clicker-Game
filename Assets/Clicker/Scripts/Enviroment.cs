@@ -3,6 +3,7 @@ using UnityEngine;
 public class Enviroment : MonoBehaviour
 {
     [SerializeField] private Group[] _groups;
+    public int GroupCount => _groups.Length;
 
     private void Awake()
     {
