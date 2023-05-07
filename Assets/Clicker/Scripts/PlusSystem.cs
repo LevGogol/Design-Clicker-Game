@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using DG.Tweening;
 using UnityEngine;
 
 public class PlusSystem : MonoBehaviour
@@ -28,5 +30,6 @@ public class PlusSystem : MonoBehaviour
     public void AddItemWithAnimation(Item item)
     {
         AddItem(item);
+        _itemPoints.Last().transform.DOScale(1f, 0.2f).From(0f);
     }
 }

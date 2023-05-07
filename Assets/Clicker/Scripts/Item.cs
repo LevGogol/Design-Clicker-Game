@@ -16,6 +16,7 @@ public class Item : MonoBehaviour
     public string Description => _description;
     public int CoinsPerSecond => _coinsPerSecond;
     public int Cost => _cost;
+    public bool Buyed { get; set; }
 
     public void Show()
     {

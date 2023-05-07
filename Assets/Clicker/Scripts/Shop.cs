@@ -22,6 +22,7 @@ public class Shop : MonoBehaviour
     private Canvas _canvas;
     private bool _isDrag;
     private Vector3 _lastPosition;
+    private Tween _tween;
 
     public event Action<int> ItemClicked;
 
@@ -106,7 +107,14 @@ public class Shop : MonoBehaviour
         _rectTransform.DOAnchorPosY(_startValue, _duration);
     }
 
-    private void Hide()
+    public void HideNoAnimation()
+    {
+        var position = _rectTransform.anchoredPosition;
+        position.y = _endValue;
+        _rectTransform.anchoredPosition = position;
+    }
+
+    public void Hide()
     {
         _rectTransform.DOAnchorPosY(_endValue, _duration);
     }
@@ -129,26 +137,8 @@ public class Shop : MonoBehaviour
 
     public void AddItemWithAnimation(Item item)
     {
-        _scrollRect.enabled = false;
-        _contentRoot.DOAnchorPosY(-250, 1f);
-
-        DOVirtual.DelayedCall(0.2f, () =>
-        {
-            _verticalLayoutGroup.enabled = false;
-
-            var itemUI = AddItem(item);
-
-            itemUI.RectTransform.anchoredPosition = Vector3.up * 125;
-            itemUI.RectTransform.localScale = Vector3.zero;
-
-            itemUI.RectTransform.DOScale(1f, 1f).OnComplete(() =>
-            {
-                _verticalLayoutGroup.enabled = true;
-                _scrollRect.enabled = true;
-                _contentRoot.anchoredPosition = Vector3.zero;
-                // _rectTransform.sizeDelta = _startSize;
-            });
-        });
+        var itemUI = AddItem(item);
+        itemUI.transform.DOScale(1f, 1f).From(0.2f).SetEase(Ease.OutSine);
 
     }
 

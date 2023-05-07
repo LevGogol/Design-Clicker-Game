@@ -2,20 +2,44 @@ using UnityEngine;
 
 public class Enviroment : MonoBehaviour
 {
-    [SerializeField] private Item[] _items;
+    [SerializeField] private Group[] _groups;
 
     private void Awake()
     {
-        for (var index = 0; index < _items.Length; index++)
+        var previousCount = 0;
+        for (int x = 0; x < _groups.Length; x++)
         {
-            var item = _items[index];
-            item.Index = index;
-            item.gameObject.SetActive(false);
+            for (var y = 0; y < _groups[x].Items.Length; y++)
+            {
+                var item = _groups[x].Items[y];
+                item.Index = previousCount + y;
+                item.gameObject.SetActive(false);
+            }
+
+            previousCount += _groups[x].Items.Length;
         }
+    }
+
+    public Group GetGroup(int index)
+    {
+        return _groups[index];
     }
 
     public Item GetItem(int index)
     {
-        return _items[index];
+        var previousItems = 0;
+        
+        for (int x = 0; x < _groups.Length; x++)
+        {
+            if (index >= _groups[x].Items.Length + previousItems)
+            {
+                previousItems += _groups[x].Items.Length;
+                continue;
+            }
+
+            return _groups[x].Items[index - previousItems];
+        }
+        
+        return null;
     }
 }

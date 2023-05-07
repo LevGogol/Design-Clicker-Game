@@ -22,6 +22,7 @@ public class CameraFacade : MonoBehaviour
         _offsetFromCenterObject = transform.position - _objectAtCenter.position;
         _startPosition = transform.localPosition;
         _targetPosition = transform.localPosition;
+        _targetZoom = _camera.orthographicSize;
     }
 
     private void LateUpdate()
