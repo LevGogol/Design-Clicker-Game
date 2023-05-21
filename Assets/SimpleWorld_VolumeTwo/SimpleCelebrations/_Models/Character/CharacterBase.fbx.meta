@@ -1,0 +1,438 @@
+fileFormatVersion: 2
+guid: dc8e1c816e505b540a81434b53e68798
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Body_jnt
+    100002: //RootNode
+    100004: Foot_Left_jnt
+    100006: Foot_Right_jnt
+    100008: Hand_Left_jnt
+    100010: Hand_Right_jnt
+    100012: Hat_jnt
+    100014: Head_jnt
+    100016: Hips_jnt
+    100018: LowerArm_Left_jnt
+    100020: LowerArm_Right_jnt
+    100022: LowerLeg_Left_jnt
+    100024: LowerLeg_Right_jnt
+    100026: Root_jnt
+    100028: SC_Characte_Devil
+    100030: SC_Character_DayOfTheDead
+    100032: SC_Character_EasterBunnyGuy
+    100034: SC_Character_Elf
+    100036: SC_Character_Frankenstein
+    100038: SC_Character_Leprechaun
+    100040: SC_Character_Santa
+    100042: SC_Character_Uncle_Sam
+    100044: SC_Character_Vampire
+    100046: SC_Character_Witch
+    100048: Spine_jnt
+    100050: UpperArm_Left_jnt
+    100052: UpperArm_Right_jnt
+    100054: UpperLeg_Left_jnt
+    100056: UpperLeg_Right_jnt
+    400000: Body_jnt
+    400002: //RootNode
+    400004: Foot_Left_jnt
+    400006: Foot_Right_jnt
+    400008: Hand_Left_jnt
+    400010: Hand_Right_jnt
+    400012: Hat_jnt
+    400014: Head_jnt
+    400016: Hips_jnt
+    400018: LowerArm_Left_jnt
+    400020: LowerArm_Right_jnt
+    400022: LowerLeg_Left_jnt
+    400024: LowerLeg_Right_jnt
+    400026: Root_jnt
+    400028: SC_Characte_Devil
+    400030: SC_Character_DayOfTheDead
+    400032: SC_Character_EasterBunnyGuy
+    400034: SC_Character_Elf
+    400036: SC_Character_Frankenstein
+    400038: SC_Character_Leprechaun
+    400040: SC_Character_Santa
+    400042: SC_Character_Uncle_Sam
+    400044: SC_Character_Vampire
+    400046: SC_Character_Witch
+    400048: Spine_jnt
+    400050: UpperArm_Left_jnt
+    400052: UpperArm_Right_jnt
+    400054: UpperLeg_Left_jnt
+    400056: UpperLeg_Right_jnt
+    4300000: SC_Character_DayOfTheDead
+    4300002: SC_Character_Vampire
+    4300004: SC_Characte_Devil
+    4300006: SC_Character_Frankenstein
+    4300008: SC_Character_Elf
+    4300010: SC_Character_Santa
+    4300012: SC_Character_EasterBunnyGuy
+    4300014: SC_Character_Witch
+    4300016: SC_Character_Uncle_Sam
+    4300018: SC_Character_Leprechaun
+    9500000: //RootNode
+    11400000: Body_jnt
+    11400002: //RootNode
+    11400004: //RootNode
+    11400006: Foot_Left_jnt
+    11400008: Foot_Right_jnt
+    11400010: Hand_Left_jnt
+    11400012: Hand_Right_jnt
+    11400014: Hat_jnt
+    11400016: Head_jnt
+    11400018: Hips_jnt
+    11400020: LowerArm_Left_jnt
+    11400022: LowerArm_Right_jnt
+    11400024: LowerLeg_Left_jnt
+    11400026: LowerLeg_Right_jnt
+    11400028: Root_jnt
+    11400030: SC_Characte_Devil
+    11400032: SC_Character_DayOfTheDead
+    11400034: SC_Character_EasterBunnyGuy
+    11400036: SC_Character_Elf
+    11400038: SC_Character_Frankenstein
+    11400040: SC_Character_Leprechaun
+    11400042: SC_Character_Santa
+    11400044: SC_Character_Uncle_Sam
+    11400046: SC_Character_Vampire
+    11400048: SC_Character_Witch
+    11400050: Spine_jnt
+    11400052: UpperArm_Left_jnt
+    11400054: UpperArm_Right_jnt
+    11400056: UpperLeg_Left_jnt
+    11400058: UpperLeg_Right_jnt
+    13700000: SC_Characte_Devil
+    13700002: SC_Character_DayOfTheDead
+    13700004: SC_Character_EasterBunnyGuy
+    13700006: SC_Character_Elf
+    13700008: SC_Character_Frankenstein
+    13700010: SC_Character_Leprechaun
+    13700012: SC_Character_Santa
+    13700014: SC_Character_Uncle_Sam
+    13700016: SC_Character_Vampire
+    13700018: SC_Character_Witch
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: "Avatar Rig Configuration mis-match. Bone length in configuration
+      does not match position in animation file:\n\t'UpperLeg_Left_jnt' : position
+      error = 19905.970703 mm\n\t'LowerLeg_Left_jnt' : position error = 29010.603516
+      mm\n\t'Foot_Left_jnt' : position error = 30112.265625 mm\n\t'UpperLeg_Right_jnt'
+      : position error = 19905.958984 mm\n\t'LowerLeg_Right_jnt' : position error
+      = 29010.628906 mm\n\t'Foot_Right_jnt' : position error = 30112.269531 mm\n\t'Body_jnt'
+      : position error = 1475.520020 mm\n\t'Spine_jnt' : position error = 51923.675781
+      mm\n\t'Head_jnt' : position error = 24061.226563 mm\n\t'UpperArm_Right_jnt'
+      : position error = 46957.617188 mm\n\t'LowerArm_Right_jnt' : position error
+      = 36498.574219 mm\n\t'Hand_Right_jnt' : position error = 34105.828125 mm\n\t'UpperArm_Left_jnt'
+      : position error = 46957.613281 mm\n\t'LowerArm_Left_jnt' : position error =
+      36498.429688 mm\n\t'Hand_Left_jnt' : position error = 34105.828125 mm\n"
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 1
+    tangentImportMode: 1
+    normalCalculationMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: Hips_jnt
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: UpperLeg_Left_jnt
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: UpperLeg_Right_jnt
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LowerLeg_Left_jnt
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LowerLeg_Right_jnt
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Foot_Left_jnt
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Foot_Right_jnt
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Body_jnt
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Spine_jnt
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Head_jnt
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: UpperArm_Left_jnt
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: UpperArm_Right_jnt
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LowerArm_Left_jnt
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LowerArm_Right_jnt
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hand_Left_jnt
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hand_Right_jnt
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: CharacterBase(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.01, y: 0.01, z: 0.01}
+    - name: SC_Characte_Devil
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Root_jnt
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hips_jnt
+      parentName: 
+      position: {x: -0, y: 104.49876, z: 0}
+      rotation: {x: 0, y: 0, z: 0.2597436, w: 0.9656776}
+      scale: {x: 1, y: 1, z: 1}
+    - name: UpperLeg_Left_jnt
+      parentName: 
+      position: {x: -25.698244, y: -1.4210855e-14, z: 0}
+      rotation: {x: -0.00013711104, y: -0.00008424717, z: 0.49917465, w: 0.8665014}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LowerLeg_Left_jnt
+      parentName: 
+      position: {x: -37.452164, y: -7.1054274e-15, z: -1.7347235e-18}
+      rotation: {x: -0.7075902, y: 0.000006446892, z: -0.000006145912, w: 0.706623}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Foot_Left_jnt
+      parentName: 
+      position: {x: -38.874374, y: 1.2073675e-15, z: 7.3426776e-10}
+      rotation: {x: 0.50042224, y: 0.5004222, z: -0.49957308, w: 0.49958178}
+      scale: {x: 1, y: 1, z: 1}
+    - name: UpperLeg_Right_jnt
+      parentName: 
+      position: {x: 12.763839, y: -22.304337, z: 0}
+      rotation: {x: -0.49918568, y: 0.8664699, z: 0.0057249772, w: -0.003284124}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LowerLeg_Right_jnt
+      parentName: 
+      position: {x: 37.4522, y: 3.1974423e-14, z: -1.0987399e-10}
+      rotation: {x: -0.70410997, y: -0.000030960506, z: 0.00005181963, w: 0.71009094}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Foot_Right_jnt
+      parentName: 
+      position: {x: 38.8744, y: 8.197164e-10, z: -0.000000003690733}
+      rotation: {x: 0.50117123, y: 0.5011969, z: -0.498829, w: 0.49879736}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Body_jnt
+      parentName: 
+      position: {x: 0.9555898, y: 1.6478357, z: 0}
+      rotation: {x: -0, y: 0, z: 0.86650366, w: -0.49917072}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine_jnt
+      parentName: 
+      position: {x: -67.032524, y: 3.7986006e-14, z: 0}
+      rotation: {x: 0, y: 0, z: -1.6102571e-15, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Head_jnt
+      parentName: 
+      position: {x: -31.062609, y: 6.8972847e-15, z: 0}
+      rotation: {x: 0, y: 0, z: -2.1684043e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hat_jnt
+      parentName: 
+      position: {x: -54.227097, y: 1.2040834e-14, z: 0}
+      rotation: {x: 3.630809e-16, y: -1.4719917e-16, z: 0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: UpperArm_Right_jnt
+      parentName: 
+      position: {x: -21.910845, y: 56.523197, z: 0}
+      rotation: {x: 0.7071068, y: -0.7071068, z: -4.3352284e-17, w: 4.3243328e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LowerArm_Right_jnt
+      parentName: 
+      position: {x: -47.118996, y: 5.684342e-14, z: -5.7704132e-15}
+      rotation: {x: 6.123229e-17, y: 7.7045134e-20, z: -1.810184e-15, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hand_Right_jnt
+      parentName: 
+      position: {x: -44.03, y: -8.526513e-14, z: -5.39212e-15}
+      rotation: {x: 1.4483431e-13, y: 1, z: -9.494107e-16, w: 1.8535114e-15}
+      scale: {x: 1, y: 1, z: 1}
+    - name: UpperArm_Left_jnt
+      parentName: 
+      position: {x: -21.910845, y: -56.523197, z: 0}
+      rotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LowerArm_Left_jnt
+      parentName: 
+      position: {x: 47.1188, y: 0, z: 5.77041e-15}
+      rotation: {x: 0, y: 0, z: -2.575197e-15, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hand_Left_jnt
+      parentName: 
+      position: {x: 44.03, y: -5.684342e-14, z: 5.3920898e-15}
+      rotation: {x: -1.7880714e-13, y: 1, z: -7.2736614e-16, w: -2.283619e-15}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.542
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: Root_jnt
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: a5dc81931b9e88d40a2faef55b51a82c,
+    type: 3}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

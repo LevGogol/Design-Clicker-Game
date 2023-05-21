@@ -43,4 +43,10 @@ public class Enviroment : MonoBehaviour
         
         return null;
     }
+    
+    [ContextMenu("FillGroups")]
+    public void FillGroups()
+    {
+        _groups = GetComponentsInChildren<Group>();
+    }
 }

@@ -17,6 +17,8 @@ public class CameraFacade : MonoBehaviour
     private Vector3 _targetPosition;
     private float _targetZoom;
 
+    public Camera Camera => _camera;
+
     private void Awake()
     {
         _offsetFromCenterObject = transform.position - _objectAtCenter.position;

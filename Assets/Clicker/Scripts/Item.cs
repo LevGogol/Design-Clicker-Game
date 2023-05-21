@@ -22,6 +22,6 @@ public class Item : MonoBehaviour
     {
         gameObject.SetActive(true);
 
-        transform.DOScale(1f, 1f).SetEase(Ease.OutBounce).From(0f);
+        transform.DOScale(transform.localScale, 1f).SetEase(Ease.OutBounce).From(0f);
     }
 }

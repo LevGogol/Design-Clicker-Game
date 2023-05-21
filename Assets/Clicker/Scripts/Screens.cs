@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,17 +12,23 @@ public class Screens : MonoBehaviour
     [SerializeField] private Shop _shop;
     [SerializeField] private Popap _popap;
     [SerializeField] private Button _nextButton;
+    [SerializeField] private MainMenu _mainMenu;
 
-    public CoinsUI CoinsUI => _coinsUI;
-    public CoinsPerSecondUI CoinsPerSecondUI => _coinsPerSecondUI;
-    public CoinsPerClickUI CoinsPerClickUI => _coinsPerClickUI;
-    public Shop Shop => _shop;
-    public Canvas Canvas => _canvas;
-    public Popap Popap => _popap;
+    public MainMenu MainMenu => _mainMenu;
 
-    public void ShowNextButton()
+    public void ShowNextButton(Action callback)
     {
         _nextButton.gameObject.SetActive(true);
-        _nextButton.onClick.AddListener(() => SceneManager.LoadScene(0));
+        _nextButton.onClick.AddListener(() =>
+        {
+            callback.Invoke();
+            _nextButton.onClick.RemoveAllListeners();
+        });
+    }
+
+    public void HideNextButton()
+    {
+        _nextButton.gameObject.SetActive(false);
+        _nextButton.onClick.RemoveAllListeners();
     }
 }

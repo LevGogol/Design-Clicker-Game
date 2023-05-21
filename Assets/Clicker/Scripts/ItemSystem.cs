@@ -7,12 +7,11 @@ public class ItemSystem : MonoBehaviour
 {
     [SerializeField] private Pluses pluses;
     [SerializeField] private Enviroment _enviroment;
-    [SerializeField] private CameraFacade _camera;
 
     public event Action<Item> ItemBuyed = delegate(Item item) {  };
     public event Action LastBuyed = delegate() {  };
-    
-    private int currentGroup;
+
+    private int _currentGroup;
 
     private void OnEnable()
     {
@@ -38,7 +37,6 @@ public class ItemSystem : MonoBehaviour
     private void PlayOpenAnimation(Item item)
     {
         var sequence = DOTween.Sequence();
-        sequence.AppendCallback(() => _camera.MoveTo(item.transform.position));
         sequence.AppendInterval(0.5f);
         sequence.AppendCallback(() =>
         {
@@ -46,27 +44,26 @@ public class ItemSystem : MonoBehaviour
             Audio.Instance.PlaySoundOneShot(TrackName.Pop);
         });
         sequence.AppendInterval(1f);
-        sequence.AppendCallback(TryAddGroup);
     }
 
-    public void TryAddGroup()
+    public void TryAddGroup() //TODO ugly
     {
-        var group = _enviroment.GetGroup(currentGroup);
+        var group = _enviroment.GetGroup(_currentGroup);
         foreach (var item in group.Items)
         {
             if (item.Buyed == false)
                 return;
         }
         
-        currentGroup++;
+        _currentGroup++;
         
-        if (currentGroup >= _enviroment.GroupCount)
+        if (_currentGroup >= _enviroment.GroupCount)
         {
             LastBuyed.Invoke();
             return;
         }
         
-        DOVirtual.DelayedCall(1.5f, () => AddGroup(currentGroup));
+        DOVirtual.DelayedCall(1.5f, () => AddGroup(_currentGroup));
     }
 
     public void AddGroup(int index)

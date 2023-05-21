@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
 public class Group : MonoBehaviour
 {
@@ -6,9 +7,11 @@ public class Group : MonoBehaviour
 
     public Item[] Items => _items;
 
+    #if UNITY_EDITOR
     [ContextMenu("FillItems")]
     public void FillItems()
     {
         _items = GetComponentsInChildren<Item>();
     }
+    #endif
 }
