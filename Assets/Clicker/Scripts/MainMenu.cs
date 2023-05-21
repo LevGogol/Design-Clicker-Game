@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private LevelInfo[] _levelsInfo;
+    
     private Levels _levels;
     
     public void Initialize(Levels levels)
