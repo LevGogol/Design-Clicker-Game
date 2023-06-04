@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7246910648391881630}
   - component: {fileID: 6333128173951601177}
+  - component: {fileID: 5366488041261506103}
+  - component: {fileID: 794208223168961559}
   m_Layer: 0
   m_Name: NextEmptyRoom
   m_TagString: Untagged
@@ -25,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469296144966634317}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.120001, y: 0, z: 4.950001}
+  m_LocalPosition: {x: -6.1200023, y: 0, z: 4.9500017}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -66,6 +68,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Index: 0
+--- !u!33 &5366488041261506103
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469296144966634317}
+  m_Mesh: {fileID: 4300000, guid: 1b47df3b56311314a81f61be4016abc8, type: 2}
+--- !u!23 &794208223168961559
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469296144966634317}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 0fa29dbb24d023c4f815d0a00e41584a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &600968750285788053
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,6 +270,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5869529578692474909}
   - component: {fileID: 6286790055957622172}
+  - component: {fileID: 8343551835308525282}
+  - component: {fileID: 2935248145784964718}
   m_Layer: 0
   m_Name: SkladRoom
   m_TagString: Untagged
@@ -233,7 +287,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 892237764165853829}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.52, y: 0, z: -0}
+  m_LocalPosition: {x: 3.5199976, y: 0, z: -0.0000047683716}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -256,6 +310,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Index: 0
+--- !u!33 &8343551835308525282
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892237764165853829}
+  m_Mesh: {fileID: 4300000, guid: 9c6cc40c5d79cf547878f1622f3b3d79, type: 2}
+--- !u!23 &2935248145784964718
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892237764165853829}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 0fa29dbb24d023c4f815d0a00e41584a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1613395598196623804
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,6 +369,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 269757887020455481}
+  - component: {fileID: 7454037050551096705}
+  - component: {fileID: 932658606281375335}
   m_Layer: 0
   m_Name: EmptyRoom
   m_TagString: Untagged
@@ -299,7 +405,6 @@ Transform:
   - {fileID: 871927138675110990}
   - {fileID: 8952842544435516960}
   - {fileID: 1980682463355359925}
-  - {fileID: 8857836772669211537}
   - {fileID: 7830006662363062330}
   - {fileID: 3882311107490537299}
   - {fileID: 7171777137160804359}
@@ -319,11 +424,60 @@ Transform:
   - {fileID: 6863638716658018767}
   - {fileID: 6826893895156136248}
   - {fileID: 7063286856466165621}
-  - {fileID: 5444167833582367107}
   - {fileID: 9077982177388439438}
   m_Father: {fileID: 6795282881537389544}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &7454037050551096705
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613395598196623804}
+  m_Mesh: {fileID: 4300000, guid: 673f5a85a6a3b904ab6eb1fda946b324, type: 2}
+--- !u!23 &932658606281375335
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613395598196623804}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 0fa29dbb24d023c4f815d0a00e41584a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &2095785644323377980
 GameObject:
   m_ObjectHideFlags: 0
@@ -1069,12 +1223,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4661764606823339986}
-  m_LocalRotation: {x: 0.7164187, y: -0, z: -0, w: 0.6976706}
-  m_LocalPosition: {x: -0.05999998, y: 13.969999, z: -2.190002}
+  m_LocalRotation: {x: 0.71641874, y: -0, z: -0, w: 0.69767064}
+  m_LocalPosition: {x: -0.06000013, y: 13.969999, z: -2.1900027}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 269757887020455481}
+  m_Father: {fileID: 5291362066837434535}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &5530676208064203599
@@ -1619,8 +1773,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6393592399472540525}
   - component: {fileID: 149662458499925864}
+  - component: {fileID: 8453376899833999377}
+  - component: {fileID: 2676243129204122078}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: SkaldWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1634,7 +1790,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7476668858842447456}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.032017, y: 0, z: -4.954009}
+  m_LocalPosition: {x: -17.032034, y: 0, z: -4.954013}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1659,6 +1815,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Index: 0
+--- !u!33 &8453376899833999377
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7476668858842447456}
+  m_Mesh: {fileID: 4300000, guid: 5ed4a0c8dcaf803479870105fc115c0a, type: 2}
+--- !u!23 &2676243129204122078
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7476668858842447456}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 0fa29dbb24d023c4f815d0a00e41584a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7601958767399189175
 GameObject:
   m_ObjectHideFlags: 0
@@ -1732,11 +1938,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7653485791738478789}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 11.590021, y: -0.0050000004, z: -6.4800143}
+  m_LocalPosition: {x: 11.590025, y: -0.0050000004, z: -6.4800158}
   m_LocalScale: {x: 500.00034, y: 500.00037, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 269757887020455481}
+  m_Father: {fileID: 5291362066837434535}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &362371068009581212
@@ -2058,7 +2264,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5291362066837434535
 Transform:
   m_ObjectHideFlags: 0
@@ -2071,6 +2277,8 @@ Transform:
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5444167833582367107}
+  - {fileID: 8857836772669211537}
   - {fileID: 6655620587204184253}
   - {fileID: 8083768738737694177}
   - {fileID: 8750980812307060770}
@@ -2101,7 +2309,7 @@ MonoBehaviour:
   _boundsSize: {x: 35, y: 1, z: 35}
   _itemSystem: {fileID: 2532724020669773159}
   _background: {fileID: 2788845907669078319}
-  IsComplete: 0
+  IsComplete: 1
   Index: 6
 --- !u!1 &8887133002614553156
 GameObject:
@@ -2211,6 +2419,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7246910648391881630}
     m_Modifications:
+    - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 452192, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2267,6 +2479,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Carpet_Grey 11
       objectReference: {fileID: 0}
+    - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 452192, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2319,6 +2535,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 269757887020455481}
     m_Modifications:
+    - target: {fileID: 195318, guid: b8b27fb944ca23b468b9b0a188b69296, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 460090, guid: b8b27fb944ca23b468b9b0a188b69296, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2374,6 +2594,10 @@ PrefabInstance:
     - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_Name
       value: Floor_Carpet_Grey 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 452192, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_RootOrder
@@ -2658,6 +2882,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SO_Floor_02
       objectReference: {fileID: 0}
+    - target: {fileID: 186892, guid: 82d212ec178493943bce68e9688b1660, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 441084, guid: 82d212ec178493943bce68e9688b1660, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2713,6 +2941,10 @@ PrefabInstance:
     - target: {fileID: 186892, guid: 82d212ec178493943bce68e9688b1660, type: 3}
       propertyPath: m_Name
       value: SO_Floor_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 186892, guid: 82d212ec178493943bce68e9688b1660, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 441084, guid: 82d212ec178493943bce68e9688b1660, type: 3}
       propertyPath: m_RootOrder
@@ -2847,6 +3079,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Carpet_Grey 17
       objectReference: {fileID: 0}
+    - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 452192, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2902,6 +3138,10 @@ PrefabInstance:
     - target: {fileID: 193654, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
       propertyPath: m_Name
       value: SO_Wall 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 193654, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 401290, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
       propertyPath: m_RootOrder
@@ -3044,6 +3284,10 @@ PrefabInstance:
     - target: {fileID: 186892, guid: 82d212ec178493943bce68e9688b1660, type: 3}
       propertyPath: m_Name
       value: SO_Floor_13
+      objectReference: {fileID: 0}
+    - target: {fileID: 186892, guid: 82d212ec178493943bce68e9688b1660, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 441084, guid: 82d212ec178493943bce68e9688b1660, type: 3}
       propertyPath: m_RootOrder
@@ -3261,6 +3505,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SO_Wall_Glass_Door 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114146, guid: 25d5aaa0a93c5fd4aafc25215a4f3534, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 139204, guid: 25d5aaa0a93c5fd4aafc25215a4f3534, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 421162, guid: 25d5aaa0a93c5fd4aafc25215a4f3534, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -3317,6 +3569,10 @@ PrefabInstance:
     - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_Name
       value: Floor_Carpet_Grey 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 452192, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_RootOrder
@@ -3424,7 +3680,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 105514, guid: 0e9a03c70ebdb9048b62c7bc85070420, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 177230, guid: 0e9a03c70ebdb9048b62c7bc85070420, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 416598, guid: 0e9a03c70ebdb9048b62c7bc85070420, type: 3}
       propertyPath: m_RootOrder
@@ -3566,7 +3826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 193654, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 401290, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
       propertyPath: m_RootOrder
@@ -3679,6 +3939,10 @@ PrefabInstance:
     - target: {fileID: 193654, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
       propertyPath: m_Name
       value: SO_Wall 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 193654, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 401290, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
       propertyPath: m_RootOrder
@@ -3893,6 +4157,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SO_Wall_Window 15
       objectReference: {fileID: 0}
+    - target: {fileID: 189238, guid: 60f4e128a89ee4a4f819677a974d462c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 453958, guid: 60f4e128a89ee4a4f819677a974d462c, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -4004,6 +4272,10 @@ PrefabInstance:
     - target: {fileID: 186892, guid: 82d212ec178493943bce68e9688b1660, type: 3}
       propertyPath: m_Name
       value: SO_Floor_14
+      objectReference: {fileID: 0}
+    - target: {fileID: 186892, guid: 82d212ec178493943bce68e9688b1660, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 441084, guid: 82d212ec178493943bce68e9688b1660, type: 3}
       propertyPath: m_RootOrder
@@ -4140,6 +4412,10 @@ PrefabInstance:
     - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_Name
       value: Floor_Carpet_Grey 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 452192, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_RootOrder
@@ -4363,6 +4639,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Carpet_Grey 19
       objectReference: {fileID: 0}
+    - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 452192, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -4543,6 +4823,10 @@ PrefabInstance:
     - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_Name
       value: Floor_Carpet_Grey 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 452192, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_RootOrder
@@ -4733,6 +5017,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SO_Wall 12
       objectReference: {fileID: 0}
+    - target: {fileID: 193654, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 401290, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -4788,6 +5076,10 @@ PrefabInstance:
     - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_Name
       value: Floor_Carpet_Grey 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 452192, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_RootOrder
@@ -4897,6 +5189,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7246910648391881630}
     m_Modifications:
+    - target: {fileID: 100746, guid: de3e17153ac636a4d843deeac89ae206, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 471252, guid: de3e17153ac636a4d843deeac89ae206, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -5032,6 +5328,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SO_Floor_12
       objectReference: {fileID: 0}
+    - target: {fileID: 186892, guid: 82d212ec178493943bce68e9688b1660, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 441084, guid: 82d212ec178493943bce68e9688b1660, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -5084,6 +5384,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7246910648391881630}
     m_Modifications:
+    - target: {fileID: 138510, guid: 254978fada9015b409a4c5a96a16c193, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 405522, guid: 254978fada9015b409a4c5a96a16c193, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -5277,6 +5581,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SO_Door 2
       objectReference: {fileID: 0}
+    - target: {fileID: 195318, guid: b8b27fb944ca23b468b9b0a188b69296, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 460090, guid: b8b27fb944ca23b468b9b0a188b69296, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -5388,6 +5696,10 @@ PrefabInstance:
     - target: {fileID: 193654, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
       propertyPath: m_Name
       value: SO_Wall 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 193654, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 401290, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
       propertyPath: m_RootOrder
@@ -5648,6 +5960,10 @@ PrefabInstance:
     - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_Name
       value: Floor_Carpet_Grey 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 452192, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_RootOrder
@@ -6021,6 +6337,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SO_Wall_Window 14
       objectReference: {fileID: 0}
+    - target: {fileID: 189238, guid: 60f4e128a89ee4a4f819677a974d462c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 453958, guid: 60f4e128a89ee4a4f819677a974d462c, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -6149,6 +6469,10 @@ PrefabInstance:
     - target: {fileID: 193654, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
       propertyPath: m_Name
       value: SO_Wall 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 193654, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 401290, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
       propertyPath: m_RootOrder
@@ -6289,6 +6613,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SO_Floor_27
       objectReference: {fileID: 0}
+    - target: {fileID: 186892, guid: 82d212ec178493943bce68e9688b1660, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 441084, guid: 82d212ec178493943bce68e9688b1660, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -6397,6 +6725,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Carpet_Grey 8
       objectReference: {fileID: 0}
+    - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 452192, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -6504,6 +6836,10 @@ PrefabInstance:
     - target: {fileID: 189238, guid: 60f4e128a89ee4a4f819677a974d462c, type: 3}
       propertyPath: m_Name
       value: SO_Wall_Window 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 189238, guid: 60f4e128a89ee4a4f819677a974d462c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 453958, guid: 60f4e128a89ee4a4f819677a974d462c, type: 3}
       propertyPath: m_RootOrder
@@ -6749,6 +7085,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Carpet_Grey 7
       objectReference: {fileID: 0}
+    - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 452192, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -6990,6 +7330,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SO_Wall 28
       objectReference: {fileID: 0}
+    - target: {fileID: 193654, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 401290, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -7046,6 +7390,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Carpet_Grey 5
       objectReference: {fileID: 0}
+    - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 452192, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -7100,7 +7448,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 124948, guid: 1e8d81f7c7bde9644b23cbfa35ff08ea, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 469706, guid: 1e8d81f7c7bde9644b23cbfa35ff08ea, type: 3}
       propertyPath: m_RootOrder
@@ -7212,7 +7560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 193654, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 401290, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
       propertyPath: m_RootOrder
@@ -7428,7 +7776,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 114146, guid: 25d5aaa0a93c5fd4aafc25215a4f3534, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 139204, guid: 25d5aaa0a93c5fd4aafc25215a4f3534, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 421162, guid: 25d5aaa0a93c5fd4aafc25215a4f3534, type: 3}
       propertyPath: m_RootOrder
@@ -7559,6 +7911,10 @@ PrefabInstance:
     - target: {fileID: 186892, guid: 82d212ec178493943bce68e9688b1660, type: 3}
       propertyPath: m_Name
       value: SO_Floor_28
+      objectReference: {fileID: 0}
+    - target: {fileID: 186892, guid: 82d212ec178493943bce68e9688b1660, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 441084, guid: 82d212ec178493943bce68e9688b1660, type: 3}
       propertyPath: m_RootOrder
@@ -7723,6 +8079,10 @@ PrefabInstance:
     - target: {fileID: 193654, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
       propertyPath: m_Name
       value: SO_Wall 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 193654, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 401290, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
       propertyPath: m_RootOrder
@@ -7943,7 +8303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 138510, guid: 254978fada9015b409a4c5a96a16c193, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 405522, guid: 254978fada9015b409a4c5a96a16c193, type: 3}
       propertyPath: m_RootOrder
@@ -8001,6 +8361,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SO_Wall 19
       objectReference: {fileID: 0}
+    - target: {fileID: 193654, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 401290, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -8056,6 +8420,10 @@ PrefabInstance:
     - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_Name
       value: Floor_Carpet_Grey 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 452192, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_RootOrder
@@ -8164,6 +8532,10 @@ PrefabInstance:
     - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_Name
       value: Floor_Carpet_Grey 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 452192, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_RootOrder
@@ -8294,6 +8666,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 269757887020455481}
     m_Modifications:
+    - target: {fileID: 186892, guid: 82d212ec178493943bce68e9688b1660, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 441084, guid: 82d212ec178493943bce68e9688b1660, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -8406,6 +8782,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Carpet_Grey 15
       objectReference: {fileID: 0}
+    - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 452192, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -8462,6 +8842,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Carpet_Grey 24
       objectReference: {fileID: 0}
+    - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 452192, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -8517,6 +8901,10 @@ PrefabInstance:
     - target: {fileID: 195318, guid: b8b27fb944ca23b468b9b0a188b69296, type: 3}
       propertyPath: m_Name
       value: SO_Door 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 195318, guid: b8b27fb944ca23b468b9b0a188b69296, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 460090, guid: b8b27fb944ca23b468b9b0a188b69296, type: 3}
       propertyPath: m_RootOrder
@@ -8870,6 +9258,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Carpet_Grey 22
       objectReference: {fileID: 0}
+    - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 452192, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -8926,6 +9318,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SO_Wall 15
       objectReference: {fileID: 0}
+    - target: {fileID: 193654, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 401290, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -8978,6 +9374,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5869529578692474909}
     m_Modifications:
+    - target: {fileID: 151532, guid: 33d909682908ed0489cf3993db1a2324, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 441784, guid: 33d909682908ed0489cf3993db1a2324, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -9098,6 +9498,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Carpet_Grey 13
       objectReference: {fileID: 0}
+    - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 452192, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -9210,6 +9614,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SO_Wall 13
       objectReference: {fileID: 0}
+    - target: {fileID: 193654, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 401290, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -9265,6 +9673,14 @@ PrefabInstance:
     - target: {fileID: 105514, guid: 0e9a03c70ebdb9048b62c7bc85070420, type: 3}
       propertyPath: m_Name
       value: SO_Wall_Glass 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 105514, guid: 0e9a03c70ebdb9048b62c7bc85070420, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 177230, guid: 0e9a03c70ebdb9048b62c7bc85070420, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 416598, guid: 0e9a03c70ebdb9048b62c7bc85070420, type: 3}
       propertyPath: m_RootOrder
@@ -9560,6 +9976,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SO_Wall_Door_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 124948, guid: 1e8d81f7c7bde9644b23cbfa35ff08ea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 469706, guid: 1e8d81f7c7bde9644b23cbfa35ff08ea, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -9699,7 +10119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 195318, guid: b8b27fb944ca23b468b9b0a188b69296, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 460090, guid: b8b27fb944ca23b468b9b0a188b69296, type: 3}
       propertyPath: m_RootOrder
@@ -9769,6 +10189,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SO_Wall 17 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 193654, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 401290, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -9824,6 +10248,10 @@ PrefabInstance:
     - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_Name
       value: Floor_Carpet_Grey 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 452192, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_RootOrder
@@ -9937,6 +10365,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Carpet_Grey 3
       objectReference: {fileID: 0}
+    - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 452192, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -10045,6 +10477,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Carpet_Grey 16
       objectReference: {fileID: 0}
+    - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 452192, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -10100,6 +10536,10 @@ PrefabInstance:
     - target: {fileID: 193654, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
       propertyPath: m_Name
       value: SO_Wall 17 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 193654, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 401290, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
       propertyPath: m_RootOrder
@@ -10157,6 +10597,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SO_Floor_29
       objectReference: {fileID: 0}
+    - target: {fileID: 186892, guid: 82d212ec178493943bce68e9688b1660, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 441084, guid: 82d212ec178493943bce68e9688b1660, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -10213,6 +10657,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SO_Floor_11
       objectReference: {fileID: 0}
+    - target: {fileID: 186892, guid: 82d212ec178493943bce68e9688b1660, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 441084, guid: 82d212ec178493943bce68e9688b1660, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -10268,6 +10716,10 @@ PrefabInstance:
     - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_Name
       value: Floor_Carpet_Grey 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 187572, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 452192, guid: 94f4620a533a8bc4cbd53f07b8a1e05e, type: 3}
       propertyPath: m_RootOrder
