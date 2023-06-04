@@ -14,8 +14,9 @@ public class Pluses : MonoBehaviour
 
     private void Awake()
     {
+        var scale = transform.localScale;
         transform.parent = null;
-        transform.localScale = Vector3.one;
+        transform.localScale = scale;
     }
 
     public void AddPlus(Item item)
@@ -38,6 +39,6 @@ public class Pluses : MonoBehaviour
     {
         AddPlus(item);
         var plus = _plusItems.Last();
-        plus.transform.DOScale(1f, 0.2f).From(0f).OnComplete(plus.Pulse);
+        plus.transform.DOScale(plus.transform.localScale, 0.2f).From(0f).OnComplete(plus.Pulse);
     }
 }

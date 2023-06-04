@@ -73,6 +73,11 @@ public class CameraFacade : MonoBehaviour
         _targetZoom = result;
     }
 
+    public void SetBoundsSize(Vector3 size)
+    {
+        _boxCollider.size = size;
+    }
+
     private bool BoxContainsPoint(BoxCollider boxCollider, Vector3 point)
     {
         var colliderTransform = boxCollider.transform;

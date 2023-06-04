@@ -1,21 +1,35 @@
 ﻿using System;
+using DG.Tweening;
 using UnityEngine;
 
 public class Level : MonoBehaviour
 {
-    [SerializeField] private ItemSystem _itemSystem;
+    [SerializeField] private string _title;
+    [SerializeField] private Sprite _openSprite;
+    [SerializeField] private Sprite _closeSprite;
     [SerializeField] private Color _backgroundColor;
-    
+    [SerializeField] private Vector3 _boundsSize;
+    [SerializeField] private ItemSystem _itemSystem;
+    [SerializeField] private MeshRenderer _background;
+
     private InputFacade _input;
     private Screens _screens;
     private CameraFacade _cameraFacade;
 
-    public event Action Ended = delegate {  };
+    public event Action Ended;
+
+    public string Title => _title;
+    public Sprite OpenSprite => _openSprite;
+    public Sprite CloseSprite => _closeSprite;
+    public bool IsComplete;
+    public int Index;
 
     private void Start()
     {
         _itemSystem.AddGroup(0);
         _cameraFacade.Camera.backgroundColor = _backgroundColor;
+        _background.material.color = _backgroundColor;
+        _cameraFacade.SetBoundsSize(_boundsSize);
     }
 
     public void Initialize(InputFacade input, Screens screens, CameraFacade cameraFacade)
@@ -23,6 +37,11 @@ public class Level : MonoBehaviour
         _input = input;
         _screens = screens;
         _cameraFacade = cameraFacade;
+    }
+
+    private void End()
+    {
+        Ended?.Invoke();
     }
 
     private void OnEnable()
@@ -41,7 +60,10 @@ public class Level : MonoBehaviour
 
     private void ShowNextButton()
     {
-        _screens.ShowNextButton(() => Ended.Invoke());
+        DOVirtual.DelayedCall(1.5f, () =>
+        {
+            _screens.ShowNextButton(End);
+        });
     }
 
     private void OnMouseDeltaChanged(Vector2 direction)
@@ -60,7 +82,7 @@ public class Level : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
-            Ended.Invoke();
+            End();
         }
     }
 #endif

@@ -8,10 +8,15 @@ public class ItemSystem : MonoBehaviour
     [SerializeField] private Pluses pluses;
     [SerializeField] private Enviroment _enviroment;
 
-    public event Action<Item> ItemBuyed = delegate(Item item) {  };
-    public event Action LastBuyed = delegate() {  };
+    public event Action<Item> ItemBuyed;
+    public event Action LastBuyed;
 
     private int _currentGroup;
+
+    private void Start()
+    {
+        pluses.transform.parent = transform;
+    }
 
     private void OnEnable()
     {
@@ -31,7 +36,7 @@ public class ItemSystem : MonoBehaviour
         Audio.Instance.PlaySoundOneShot(TrackName.Click);
         PlayOpenAnimation(item);
 
-        ItemBuyed.Invoke(item);
+        ItemBuyed?.Invoke(item);
     }
 
     private void PlayOpenAnimation(Item item)
@@ -59,7 +64,7 @@ public class ItemSystem : MonoBehaviour
         
         if (_currentGroup >= _enviroment.GroupCount)
         {
-            LastBuyed.Invoke();
+            LastBuyed?.Invoke();
             return;
         }
         

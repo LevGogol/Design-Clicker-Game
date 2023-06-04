@@ -12,6 +12,7 @@ public class Game : MonoBehaviour
     {
         _levels.Initialize(_input, _screens, _cameraFacade);
         _screens.MainMenu.Initialize(_levels);
+        _screens.MainMenu.Hide();
         
         _levels.LoadLevel(0);
     }

@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ public class Screens : MonoBehaviour
     public void ShowNextButton(Action callback)
     {
         _nextButton.gameObject.SetActive(true);
+        _nextButton.transform.DOScale(1f, 0.4f).From(new Vector3(1, 0, 1));
         _nextButton.onClick.AddListener(() =>
         {
             callback.Invoke();

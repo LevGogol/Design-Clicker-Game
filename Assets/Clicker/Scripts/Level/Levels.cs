@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class Levels : MonoBehaviour
@@ -11,12 +12,18 @@ public class Levels : MonoBehaviour
     private Level _currentLevel;
     
     public event Action LevelEnded = delegate {  };
+    public int Count => _levels.Length;
 
     public void Initialize(InputFacade input, Screens screens, CameraFacade cameraFacade)
     {
         _input = input;
         _screens = screens;
         _cameraFacade = cameraFacade;
+
+        for (int i = 0; i < Count; i++)
+        {
+            _levels[i].Index = i;
+        }
     }
 
     public void LoadLevel(int index)
@@ -29,11 +36,17 @@ public class Levels : MonoBehaviour
         _currentLevel = level;
     }
 
+    public Level Get(int i)
+    {
+        return _levels[i];
+    }
+
     private void LevelOnEnded()
     {
         _currentLevel.Ended -= LevelOnEnded;
         Destroy(_currentLevel.gameObject);
         _screens.HideNextButton();
+        _levels[_currentLevel.Index].IsComplete = true;
         LevelEnded.Invoke();
     }
 }
