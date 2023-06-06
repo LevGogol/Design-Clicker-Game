@@ -198,7 +198,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4993014933735963055}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3188463972783220542}
+        m_TargetAssemblyTypeName: Azur.PlayableTemplate.Sound.ClipSource, Azur.PlayableTemplate.Sound
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3188463972783220542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd404cf5e910288488e52b5c47f9d307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _track: 1
+  _track: 2
 --- !u!1 &6689540721725010258
 GameObject:
   m_ObjectHideFlags: 0

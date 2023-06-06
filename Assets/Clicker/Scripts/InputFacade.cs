@@ -42,7 +42,7 @@ public class InputFacade : MonoBehaviour
             _delta = (mousePositionScreen - _lastPosition);
             _delta.x /= Screen.width;
             _delta.y /= Screen.height;
-
+            
             _lastPosition = mousePositionScreen;
         }
 

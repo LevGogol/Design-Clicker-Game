@@ -38,11 +38,14 @@ public class CameraFacade : MonoBehaviour
         _camera.orthographicSize = Mathf.Lerp(_camera.orthographicSize, _targetZoom, _zoomPower);
     }
 
+    private float z;
     public void Move(Vector3 direction)
     {
         if (direction == Vector3.zero) 
             return;
 
+        direction.x *= _camera.aspect;
+        
         var invertedDirection = new Vector3(-direction.x, 0, -direction.y);
         var invertedRotatedDirection = Quaternion.Euler(0, transform.localRotation.eulerAngles.y, 0) * invertedDirection;
         _targetPosition += invertedRotatedDirection;

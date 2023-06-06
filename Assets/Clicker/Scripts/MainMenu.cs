@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class MainMenu : MonoBehaviour
@@ -29,7 +28,7 @@ public class MainMenu : MonoBehaviour
     {
         for (int i = 0; i < _levels.Count; i++)
         {
-            var level = _levels.Get(i);
+            var level = _levels.GetPrefab(i);
             _levelsInfo[i].ID = i;
             _levelsInfo[i].Title = level.Title;
             var sprite = level.IsComplete ? level.OpenSprite : level.CloseSprite;
@@ -45,7 +44,7 @@ public class MainMenu : MonoBehaviour
         int completeCount = 0;
         for (int i = 0; i < _levels.Count; i++)
         {
-            if (_levels.Get(i).IsComplete)
+            if (_levels.GetPrefab(i).IsComplete)
                 completeCount++;
             else
                 break;

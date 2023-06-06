@@ -4,5 +4,6 @@ namespace Azur.PlayableTemplate.Sound
     {
 		Pop,
 		Click,
+		Button,
     }
 }

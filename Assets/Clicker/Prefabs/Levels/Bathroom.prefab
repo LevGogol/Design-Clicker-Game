@@ -727,10 +727,10 @@ MonoBehaviour:
   _openSprite: {fileID: 21300000, guid: 5f7e1fa8bafd94c4d94f7b4727046189, type: 3}
   _closeSprite: {fileID: 21300000, guid: 7e94cd86115d0a2438b4154d83a10260, type: 3}
   _backgroundColor: {r: 0.57254905, g: 0.5647059, b: 0.7529412, a: 0}
-  _boundsSize: {x: 13, y: 1, z: 13}
+  _boundsSize: {x: 15.86265, y: 1, z: 16.39289}
   _itemSystem: {fileID: 4411071233406409969}
   _background: {fileID: 760574392625856693}
-  IsComplete: 0
+  IsComplete: 1
   Index: 1
 --- !u!1 &6772407766283713242
 GameObject:

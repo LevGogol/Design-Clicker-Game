@@ -2278,7 +2278,7 @@ MonoBehaviour:
   _openSprite: {fileID: 21300000, guid: 43d44805f0dfda84abbf24b3c3896867, type: 3}
   _closeSprite: {fileID: 21300000, guid: cae7a9e2b163f1c4ba437e4d32ee7816, type: 3}
   _backgroundColor: {r: 0.70055705, g: 0.92300004, b: 0.854556, a: 0}
-  _boundsSize: {x: 10, y: 1, z: 17}
+  _boundsSize: {x: 15.86265, y: 1, z: 16.39289}
   _itemSystem: {fileID: 2206967295144053588}
   _background: {fileID: 3328227944536816228}
   IsComplete: 1

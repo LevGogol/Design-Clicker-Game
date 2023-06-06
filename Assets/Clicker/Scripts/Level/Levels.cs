@@ -5,13 +5,13 @@ using UnityEngine;
 public class Levels : MonoBehaviour
 {
     [SerializeField] private Level[] _levels;
-    
+
     private InputFacade _input;
     private Screens _screens;
     private CameraFacade _cameraFacade;
     private Level _currentLevel;
-    
-    public event Action LevelEnded = delegate {  };
+
+    public event Action<Level> LevelEnded;
     public int Count => _levels.Length;
 
     public void Initialize(InputFacade input, Screens screens, CameraFacade cameraFacade)
@@ -36,7 +36,7 @@ public class Levels : MonoBehaviour
         _currentLevel = level;
     }
 
-    public Level Get(int i)
+    public Level GetPrefab(int i)
     {
         return _levels[i];
     }
@@ -47,6 +47,7 @@ public class Levels : MonoBehaviour
         Destroy(_currentLevel.gameObject);
         _screens.HideNextButton();
         _levels[_currentLevel.Index].IsComplete = true;
-        LevelEnded.Invoke();
+
+        LevelEnded.Invoke(_currentLevel);
     }
 }
