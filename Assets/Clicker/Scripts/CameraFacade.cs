@@ -38,13 +38,13 @@ public class CameraFacade : MonoBehaviour
         _camera.orthographicSize = Mathf.Lerp(_camera.orthographicSize, _targetZoom, _zoomPower);
     }
 
-    private float z;
     public void Move(Vector3 direction)
     {
         if (direction == Vector3.zero) 
             return;
 
         direction.x *= _camera.aspect;
+        direction *= _camera.orthographicSize;
         
         var invertedDirection = new Vector3(-direction.x, 0, -direction.y);
         var invertedRotatedDirection = Quaternion.Euler(0, transform.localRotation.eulerAngles.y, 0) * invertedDirection;
@@ -59,21 +59,19 @@ public class CameraFacade : MonoBehaviour
 
     public void Zoom(float delta)
     {
-        var result = _camera.orthographicSize + -delta;
-
-        if (result < _minZoom)
-        {
-            _targetZoom = _minZoom;
+        if(delta == 0f)
             return;
-        }
-
-        if (result > _maxZoom)
-        {
-            _targetZoom = _maxZoom;
-            return;
-        }
         
-        _targetZoom = result;
+        var result = _camera.orthographicSize + -delta;
+        _targetZoom = Mathf.Clamp(result, _minZoom, _maxZoom);
+        // if(_targetZoom != _minZoom && _targetZoom != _maxZoom)
+            // Move((Input.mousePosition - new Vector3(Screen.width / 2f, Screen.height / 2f)) * (-Mathf.Sign(delta) * _tmp));
+    }
+
+    public void SetZoom(float zoom)
+    {
+        _targetZoom = zoom;
+        _camera.orthographicSize = zoom;
     }
 
     public void SetBoundsSize(Vector3 size)

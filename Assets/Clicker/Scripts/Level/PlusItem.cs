@@ -1,7 +1,6 @@
 ﻿using System;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlusItem : MonoBehaviour
 {
@@ -30,6 +29,9 @@ public class PlusItem : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if(_isClicked)
+            return;
+            
         transform.DOKill();
 
         _sequence = DOTween.Sequence();

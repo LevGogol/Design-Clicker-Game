@@ -24,9 +24,7 @@ public class Pluses : MonoBehaviour
         var plusItem = Instantiate(plusItemPrefab, transform);
         plusItem.transform.position = item.transform.position;
         plusItem.transform.rotation = Quaternion.identity;
-
         plusItem.Clicked += () => PlusClicked?.Invoke(item);
-        
         _plusItems.Add(plusItem);
     }
 

@@ -49,6 +49,12 @@ public class Level : MonoBehaviour
         _itemSystem.ItemBuyed += OnItemBuyed;
         _itemSystem.LastBuyed += ShowNextButton;
         _input.MouseDeltaChanged += OnMouseDeltaChanged;
+        _input.ScrollDeltaChanged += InputOnScrollDeltaChanged;
+    }
+
+    private void InputOnScrollDeltaChanged(float delta)
+    {
+        _cameraFacade.Zoom(delta);
     }
 
     private void OnDisable()

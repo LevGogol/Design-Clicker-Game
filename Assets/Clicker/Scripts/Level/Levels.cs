@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using UnityEngine;
 
 public class Levels : MonoBehaviour
@@ -11,7 +10,8 @@ public class Levels : MonoBehaviour
     private CameraFacade _cameraFacade;
     private Level _currentLevel;
 
-    public event Action<Level> LevelEnded;
+    public event Action<Level> LevelStarted;
+    public event Action<Level> LevelWon;
     public int Count => _levels.Length;
 
     public void Initialize(InputFacade input, Screens screens, CameraFacade cameraFacade)
@@ -34,6 +34,8 @@ public class Levels : MonoBehaviour
         level.gameObject.SetActive(true);
         level.Ended += LevelOnEnded;
         _currentLevel = level;
+        
+        LevelStarted?.Invoke(level);
     }
 
     public Level GetPrefab(int i)
@@ -41,13 +43,18 @@ public class Levels : MonoBehaviour
         return _levels[i];
     }
 
-    private void LevelOnEnded()
+    public void FinishCurrent()
     {
         _currentLevel.Ended -= LevelOnEnded;
         Destroy(_currentLevel.gameObject);
         _screens.HideNextButton();
+    }
+
+    private void LevelOnEnded()
+    {
+        FinishCurrent();
         _levels[_currentLevel.Index].IsComplete = true;
 
-        LevelEnded.Invoke(_currentLevel);
+        LevelWon.Invoke(_currentLevel);
     }
 }

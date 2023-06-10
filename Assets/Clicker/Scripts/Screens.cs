@@ -7,8 +7,24 @@ public class Screens : MonoBehaviour
 {
     [SerializeField] private Button _nextButton;
     [SerializeField] private MainMenu _mainMenu;
+    [SerializeField] private Button _homeButton;
 
     public MainMenu MainMenu => _mainMenu;
+
+    public void ShowHomeButton(Action callback)
+    {
+        _homeButton.gameObject.SetActive(true);
+        _homeButton.onClick.RemoveAllListeners();
+        _homeButton.onClick.AddListener(() =>
+        {
+            callback.Invoke();
+        });
+    }
+
+    public void HideHomeButton()
+    {
+        _homeButton.gameObject.SetActive(false);
+    }
 
     public void ShowNextButton(Action callback)
     {
