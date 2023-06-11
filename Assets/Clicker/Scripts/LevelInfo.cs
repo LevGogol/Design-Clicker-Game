@@ -1,4 +1,5 @@
 using System;
+using Lean.Localization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,7 +7,7 @@ using UnityEngine.UI;
 public class LevelInfo : MonoBehaviour
 {
     [HideInInspector] public int ID;
-
+    [SerializeField] private LeanLocalizedTextMeshProUGUI _leanLocalized;
     [SerializeField] private TextMeshProUGUI _titleMesh;
     [SerializeField] private Button _startButton;
     [SerializeField] private Image _image;
@@ -18,7 +19,10 @@ public class LevelInfo : MonoBehaviour
 
     public string Title
     {
-        set { _titleMesh.text = value; }
+        set
+        {
+            _leanLocalized.TranslationName = value;
+        }
     }
 
     public Sprite Sprite

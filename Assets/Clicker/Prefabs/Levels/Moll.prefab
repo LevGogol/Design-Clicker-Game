@@ -344,14 +344,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f529aac51c8f46a396cf5c355c2739f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _title: "\u0422\u043E\u0440\u0433\u043E\u0432\u044B\u0439 \u0446\u0435\u043D\u0442\u0440"
+  _title: Shopping mall
   _openSprite: {fileID: 21300000, guid: 2c9f0ac36769f8345b9da6f82858e5d6, type: 3}
   _closeSprite: {fileID: 21300000, guid: cb5d903ecf7c5384b81530d7efc72fe2, type: 3}
   _backgroundColor: {r: 0.8018868, g: 0.5141937, b: 0.16189034, a: 0}
   _boundsSize: {x: 30, y: 1, z: 30}
   _itemSystem: {fileID: 4765107998782425226}
   _background: {fileID: 1011454616201107675}
-  IsComplete: 1
+  IsComplete: 0
   Index: 5
 --- !u!1 &2578152952297758699
 GameObject:

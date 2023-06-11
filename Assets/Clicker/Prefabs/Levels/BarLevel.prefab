@@ -389,7 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f529aac51c8f46a396cf5c355c2739f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _title: "\u0411\u0430\u0440"
+  _title: Bar
   _openSprite: {fileID: 21300000, guid: 37c99a72cf29e254fa78fb1248d983e4, type: 3}
   _closeSprite: {fileID: 21300000, guid: 9a2803086e5654449a6428b1799fc2c6, type: 3}
   _backgroundColor: {r: 0.36862746, g: 0.47058827, b: 0.4901961, a: 0}

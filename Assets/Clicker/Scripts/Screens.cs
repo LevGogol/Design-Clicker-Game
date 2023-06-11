@@ -8,6 +8,10 @@ public class Screens : MonoBehaviour
     [SerializeField] private Button _nextButton;
     [SerializeField] private MainMenu _mainMenu;
     [SerializeField] private Button _homeButton;
+    [SerializeField] private Button _soundButton;
+    [SerializeField] private Image _SoundButtonImage;
+    [SerializeField] private Sprite _soundOn;
+    [SerializeField] private Sprite _soundOff;
 
     public MainMenu MainMenu => _mainMenu;
 
@@ -41,5 +45,15 @@ public class Screens : MonoBehaviour
     {
         _nextButton.gameObject.SetActive(false);
         _nextButton.onClick.RemoveAllListeners();
+    }
+
+    public void SoundOn()
+    {
+        _SoundButtonImage.sprite = _soundOn;
+    }
+
+    public void SoundOff()
+    {
+        _SoundButtonImage.sprite = _soundOff;
     }
 }
